@@ -8,7 +8,8 @@ This subject include study notes, focused on techniques. My major interests are 
 
 ## 2. Data science
 
-This subject include my thinking in data collection, analysis and visualization, focused on theoritical stuff. Obviously I'm an expert of it,there will be mistakes and childish points, but as they say, the early bird catches the worm. I will be using MS EXCEL as platform for now and gradually transit to Python/R.
+This subject include my thinking in data collection, analysis and visualization, focused on theoritical stuff. Obviously I'm NOT an expert of it, there will be mistakes and childish points, but as they say, the early bird catches the worm. 
+I will be using MS EXCEL as platform for now and gradually transit to Python/R.
 
 ---
 # CATALOG
@@ -17,3 +18,4 @@ Each new blog will be listed here with title format like:
     id.title_@date_#label...
 
 BELOW ARE BLOG LIST, ORDER BY ID ASC.
+...
