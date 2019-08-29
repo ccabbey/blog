@@ -6,7 +6,7 @@ None
 1. 可以使用单引号或双引号来表示字符串，但是前后的引号必须保持一致。
 2. 自加的方法: 
     * `x=x+1`
-    * `x=+1`
+    * `x+=1`
 3. Python有两种错误：语法错误(Syntax Error)和异常(Exception)，异常相当于语义错误。*常见的异常：ValueError(注意大小写)。*
 4. 运算顺序PAMDAS:PE_MD_AS。
    * 第一梯队：括号（parentheses）、指数（exponents）
