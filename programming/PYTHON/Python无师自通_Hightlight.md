@@ -17,7 +17,6 @@ None
    >从句包括两行或多行代码：代码头（header）及紧随其后的配套代码（suite）。**代码头指的是从句中包含关键字的那行代码**，之后是一个冒号和一行或多行带缩进的代码。
 7. Python中对象的定义：
    >对象：Python 中具有3个属性的数据值---唯一标识、数据类型和值。
-
 ### CH4 函数
 1. 函数必须包含return 语句。如果函数没有return 语句，则会返回None。
 2. 如果在函数（或类，本书第二部分将介绍）之外定义了一个变量，则变量拥有全局作用域（global scope）。*这点与VB相同。*
@@ -131,7 +130,6 @@ s[:] #[1,2,3,4,5]
     # >> line3
     ```
 9. 切片：见[CH6.2](#CH6-字符串操作)
-
 ### CH9 循环
 1. For 循环：一种用来遍历可迭代对象的循环。这个过程被称为遍历（iterating）, 标准语法："`for [变量名] in [可迭代对象名]: [指令]`"。
     * 可以遍历的数据类型有：
@@ -169,7 +167,6 @@ s[:] #[1,2,3,4,5]
             break # 9 will never be printed
         print(i)
 4. 嵌套循环: 内部包含一个循环的循环称为外循环（outer loop），嵌套的循环称为内循环（inner loop）。
-
 ### CH8 模块
 1. 程序员将大型程序分割成多个包含Python 代码的文件，也被称为模块（module）。使用模块之前，必须先导入（import）：使用语法import [模块名]导入模块。
     ```python
@@ -234,7 +231,6 @@ s[:] #[1,2,3,4,5]
 1. hangman游戏
 ### CH11 练习
 None
-
 ## PART 2 面向对象编程简介
 ### CH12 编程范式
 1. 过程式编程：这种编程风格要求你编写一系列步骤来解决问题，每步都会改变程序的状态。“先做这个，再做那个”。
@@ -324,7 +320,6 @@ None
     stan = Dog("Stanley","Bulldog",mick) # mick是Person类的实例，作为参数传递给了实体变量owner
     print(stan.owner.name)
     ```
-
 ### CH14 深入面向对象编程
 1. 在Python 中，类即对象。Python 中的每个类，都是type 类的一个实例对象。Python 中所有的类，均继承自一个叫Object 的父类。
 2. 关于object和type: object是所有类的父类（超类），type是所有类的类。即：`type的父类是object，但同时object的类是type。`
@@ -355,3 +350,7 @@ None
     * is 用于判断两个变量引用对象是否为同一个， == 用于判断引用变量的值是否相等。
     * a is b 相当于 id(a)==id(b)，id() 能够获取对象的内存地址。
     * 交互模式和脚本模式中，python对于内存分配的方式并不相同，这会导致is 关键字返回不同的结果。具体的细节参考[Python is 与 == 区别](https://www.runoob.com/note/33502)。
+### CH15 综合练习（War Game）
+code see [war_game.py](.\war_game.py)
+## PART 3 编程工具简介
+### CH16 BASH
