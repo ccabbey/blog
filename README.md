@@ -14,6 +14,6 @@ This subject include my thinking in data collection, analysis and visualization,
 # CATALOG
 BELOW ARE BLOG LIST, ORDER BY DATE DESCENDING.
 1. sql语法总结`(in work)`
-2. python无师自通studyNotes_highlight`(in work: PartIII-CH16)`
+2. python无师自通studyNotes_highlight`(in work: PartIII-CH20)`
 
 ...
