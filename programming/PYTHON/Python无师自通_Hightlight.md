@@ -354,3 +354,99 @@ None
 code see [war_game.py](.\war_game.py)
 ## PART 3 编程工具简介
 ### CH16 BASH
+1. `命令行`、`包管理器`、`正则表达式`和`版本控制`，这些都是程序员工具库中的核心成员。
+    * 命令行：
+      * Windows：`命令提示符`(Command Prompt)
+      * UNIX/LINUX：`Bash`(使用git bash)
+    * 包管理器：python：`pip`
+    * 版本控制：`git`
+    * 正则表达式：
+      * bash: `grep`
+      * python: `import re`
+2. 相对路径与绝对路径: 目录（directory）是文件夹的另一种叫法, 在使用 Bash 时，其必然是会位于某个目录中。路径（path）就是表达该位置的一种方式。
+    * 使用命令`pwd`(print working directory)来打印当前所在的目录的名称。
+    * 绝对路径（absolute path）：以/开头，表示根目录。如：`/c/users/`
+    * 相对路径（relative path）：从当前目录层级开始，输入下级目录位置，如：`home/github_repo/`
+3. Bash常用命令
+    * `echo`: 相当于python中的print。
+    * `history`: 查看所有最近命令列表。
+    * `cd [相对路径/绝对路径]`: 导航至目标路径。
+      * `cd ~`： 进入home目录;
+      * `cd /`: 返回根目录;
+      * `cd ..`: 返回上一级目录；
+    * `ls`: 打印当前工作目录下的所有目录和文件夹。
+    * `mkdir [dir_name]`: 在当前路径下新建目录，目录不能有空格。
+    * `rmdir [dir_name]`: 删除当前路径下指定目录。
+    * `touch [file_name]`: 在当前路径下新建文件。
+    * `whoami`: 打印操作系统当前用户的名称。
+    * `grep [pattern] [file/string]`: 在指定文件/文本中检索指定模式。
+4. 旗标（flag）: 旗标对于命令来说，是一些值为True 或False 的执行选项。一个命令的所有旗标默认置为False。通过在命令后加上`-[flag]`或`--[flag]`可以改变命令的执行方式。
+5. 隐藏文件的名称以英文句点开头，如.hidden。`ls -a`可以显示所有文件。
+6. 在类UNIX 操作性系统中，竖直线“|”被称为管道（pipe）。管道将一个命令的输出，传入另一个命令作为输入。如:
+    ```bash
+    echo i love $. | grep \$ # 表示将echo的输出（即'i love $.'）所谓grep命令的参数
+    #$ i love $.
+    ```
+7. 环境变量（environment variable）是保存在操作系统中的变量，使用语法`export[变量名]=[变量值]`，即可在Bash 中新建一个环境变量。引用环境变量，必须在其名称前加一个$符号。这样创建的环境变量只能存在于当前的Bash 窗口。使用相同语法，将环境变量添加到home/.profile文件中，可以永久保留环境变量。
+### CH17 正则表达式
+1. 正则表达式（regular expression）：定义搜索模式(Pattern)的一组字符串。
+2. grep 命令接受两个参数：一个正则表达式和检索正则表达式中定义模式的文件路径：`grep [pattern] [file/string]`。
+    * grep -i : 忽略大小写
+    * grep -o : 只打印匹配项
+3. `^`匹配行的起始位置，`$`匹配行的结束位置。
+4. 将正则表达式的多个字符放在`[]`中，即可定义一个匹配多个字符的模式。
+5. 使用`[[:digit:]]`匹配字符串中的数字，在python中，使用`\d`匹配数字。
+6. 重复匹配：
+    * 星号`*`是贪婪匹配（greedy），会尽可能多地匹配文本。星号前面的元素可匹配零或多次；
+    * 句号`.`匹配一个任意字符；
+    * 句号后加一个星号`.*`，匹配任意字符零或多次;
+    * 在星号后面加个问号`?`，使得正则表达式变成非贪婪模式（non-greedy）。一个非贪婪的正则表达式会尽可能少地进行匹配。**grep不支持非贪婪匹配，python支持。**
+    ```bash
+    echo two twoo not too. | grep -o two* # two twoo
+    echo __hello__there | grep -o __.*__ # __hello__
+    echo __hi__bye__hi__there | grep -o __.*__ # __hi__bye__hi__there 贪婪匹配
+    ```
+7. 在Python中使用regex: 导入re模块，例：
+    ```python
+    import re
+    s="Beautiful is better than ugly."
+    string="Two too"
+    result=re.findall("beautiful",s,re.IGNORECASE)
+    print(result) # >> ['Beautiful']
+    print(re.findall("^b",s,re.IGNORECASE)) # >> ['B']
+    print(re.findall("ugly.$",s)) #>> ['ugly.']
+    print(re.findall("t[ow]o",string,re.IGNORECASE))
+    #>> ['Two', 'too']
+    ```
+8. 在正则表达式中的字符前加上一个反斜杠\即可进行转义（忽略字符的意义，直接进行匹配）。
+    ```bash
+    $ echo I love $ | grep \\$ # I love $
+    #通常情况下，美元符号的意思是出现在匹配文本行尾时才有效，但是由于我们进行了转义，这个正则表达式只是匹配目标文本中的美元符号。
+    ```
+9. 学习正则的工具网站：[regxr.com](https://regexr.com/)
+### CH18 包管理器
+1. 包管理器（package manager）是用来安装和管理其他程序的程序。
+2. 元数据（metadata）：有关软件名称、版本号和依赖（dependencies）等的数据。
+3. 使用语法`pip install[包名称]`安装新的程序包。
+4. 使用命令`pip freeze` 查看已经安装了哪些包。
+### CH19 版本控制
+1. 代码仓库（repository）是Git 等版本控制系统创建的一种数据结构，用来记录编程项目中所有的变动。
+2. 项目成员在本地计算机上有一个本地代码仓库（local repository），记录自己对项目做的修改。同时还有一个托管在Github 等类似网站的中央代码仓库（central repository），所有本地代码仓库要与其保持同步。
+3. 推送(push): 将本地所做的修改更新至中央代码仓库。
+4. 拉取(pull): 是将中央代码仓库的新修改同步到本地。
+5. `git remote -v`（-v 是一个常用的旗标，用来打印详细信息）可打印本地代码仓库推送和拉取代码的目标URL 链接。
+6. 使用命令`git log` 查看项目的提交历史。
+7. 将编号传入命令`git checkout` 即可将项目切换到对应的提交版本。
+8. `git diff` 可实现本地代码仓库与中央代码仓库之间文件的差别对比。在
+9. 推送修改到中央代码仓库共分3 步。
+    * 暂存（stage）文件：
+      * `git add[文件名]`: 暂存文件；
+      * `git status`: 显示项目之于代码仓库的当前状态;
+      * `git reset[文件路径]`: 取消暂存;
+    * 提交(Commit)文件:
+      * `git commit -m [信息]`: 创建一次提交（commit）;
+    * 推送(push)文件:
+      * `git push origin master`: 将本地的修改推送到中央代码;
+### CH20 融会贯通
+抓取谷歌新闻链接中包含"articles"的新闻，然后把标题和链接写入csv文件的爬虫程序。
+[source code](scrape_google_news.py)
