@@ -448,5 +448,8 @@ code see [war_game.py](.\war_game.py)
     * 推送(push)文件:
       * `git push origin master`: 将本地的修改推送到中央代码;
 ### CH20 融会贯通
-抓取谷歌新闻链接中包含"articles"的新闻，然后把标题和链接写入csv文件的爬虫程序。
+1. HTML：超文本标记语言。HTML 是程序员开发网站时用到的最基本的语言之一，另外两个为CSS 和JavaScript。
+2. `<title></title>`中间的文本显示在选项卡中。标签中还可以嵌入其他标签，`<head></head>`标签中的内容都是关于网页的元数据，而`<body></body>`标签中的内容才是网站本身。`<a></a>`标签可以创建超链接。
+3. Python 提供了一个支持处理网络链接的内置模块urllib。
+4. 抓取谷歌新闻链接中包含"articles"的新闻，然后把标题和链接写入csv文件的爬虫程序。
 [source code](scrape_google_news.py)
