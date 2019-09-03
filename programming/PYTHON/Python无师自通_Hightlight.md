@@ -453,3 +453,14 @@ code see [war_game.py](.\war_game.py)
 3. Python 提供了一个支持处理网络链接的内置模块urllib。
 4. 抓取谷歌新闻链接中包含"articles"的新闻，然后把标题和链接写入csv文件的爬虫程序。
 [source code](scrape_google_news.py)
+## PART 4 计算机科学简介
+### CH21 数据结构
+1. 数据结构（data structure）是用来存储和组织信息的一种形式。
+2. 栈（stack）：先进后出（LIFO）型数据结构。将元素从栈中移除，被称为出栈（popping）。将元素放回栈中，被称为入栈（pushing）。
+    * 栈有5 个方法：
+      * `is_empty` : 如果栈为空，is_empty 返回True，反之则返回False;
+      * `push` : push 向栈的顶部添加一个元素;
+      * `pop` : pop 从顶部移除一个元素;
+      * `peek` : peek 返回顶部的元素，但不会将其移除;
+      * `size` : size 返回一个表示栈中元素数量的整型数。
+3. 栈可用来逆转可迭代对象，因为所有放入栈中的元素都会逆序取出。
