@@ -1,6 +1,6 @@
 # PYTHON无师自通学习笔记
 ## PART 1
-### CH1 & CH2 
+### CH1 & CH2
 None
 ### CH3 编程概论
 1. 可以使用单引号或双引号来表示字符串，但是前后的引号必须保持一致。
@@ -388,7 +388,9 @@ code see [war_game.py](.\war_game.py)
     #$ i love $.
     ```
 7. 环境变量（environment variable）是保存在操作系统中的变量，使用语法`export[变量名]=[变量值]`，即可在Bash 中新建一个环境变量。引用环境变量，必须在其名称前加一个$符号。这样创建的环境变量只能存在于当前的Bash 窗口。使用相同语法，将环境变量添加到home/.profile文件中，可以永久保留环境变量。
+
 ### CH17 正则表达式
+
 1. 正则表达式（regular expression）：定义搜索模式(Pattern)的一组字符串。
 2. grep 命令接受两个参数：一个正则表达式和检索正则表达式中定义模式的文件路径：`grep [pattern] [file/string]`。
     * grep -i : 忽略大小写
@@ -424,11 +426,13 @@ code see [war_game.py](.\war_game.py)
     #通常情况下，美元符号的意思是出现在匹配文本行尾时才有效，但是由于我们进行了转义，这个正则表达式只是匹配目标文本中的美元符号。
     ```
 9. 学习正则的工具网站：[regxr.com](https://regexr.com/)
+
 ### CH18 包管理器
 1. 包管理器（package manager）是用来安装和管理其他程序的程序。
 2. 元数据（metadata）：有关软件名称、版本号和依赖（dependencies）等的数据。
 3. 使用语法`pip install[包名称]`安装新的程序包。
 4. 使用命令`pip freeze` 查看已经安装了哪些包。
+
 ### CH19 版本控制
 1. 代码仓库（repository）是Git 等版本控制系统创建的一种数据结构，用来记录编程项目中所有的变动。
 2. 项目成员在本地计算机上有一个本地代码仓库（local repository），记录自己对项目做的修改。同时还有一个托管在Github 等类似网站的中央代码仓库（central repository），所有本地代码仓库要与其保持同步。
@@ -447,20 +451,47 @@ code see [war_game.py](.\war_game.py)
       * `git commit -m [信息]`: 创建一次提交（commit）;
     * 推送(push)文件:
       * `git push origin master`: 将本地的修改推送到中央代码;
+
 ### CH20 融会贯通
+
 1. HTML：超文本标记语言。HTML 是程序员开发网站时用到的最基本的语言之一，另外两个为CSS 和JavaScript。
 2. `<title></title>`中间的文本显示在选项卡中。标签中还可以嵌入其他标签，`<head></head>`标签中的内容都是关于网页的元数据，而`<body></body>`标签中的内容才是网站本身。`<a></a>`标签可以创建超链接。
 3. Python 提供了一个支持处理网络链接的内置模块urllib。
 4. 抓取谷歌新闻链接中包含"articles"的新闻，然后把标题和链接写入csv文件的爬虫程序。
 [source code](scrape_google_news.py)
+
 ## PART 4 计算机科学简介
+
 ### CH21 数据结构
+
 1. 数据结构（data structure）是用来存储和组织信息的一种形式。
 2. 栈（stack）：先进后出（LIFO）型数据结构。将元素从栈中移除，被称为出栈（popping）。将元素放回栈中，被称为入栈（pushing）。
-    * 栈有5 个方法：
+    * 栈的5 个基本方法：
       * `is_empty` : 如果栈为空，is_empty 返回True，反之则返回False;
       * `push` : push 向栈的顶部添加一个元素;
       * `pop` : pop 从顶部移除一个元素;
       * `peek` : peek 返回顶部的元素，但不会将其移除;
       * `size` : size 返回一个表示栈中元素数量的整型数。
-3. 栈可用来逆转可迭代对象，因为所有放入栈中的元素都会逆序取出。
+      * 栈的实现代码：[code](stack.py)
+3. 栈可用来逆转可迭代对象，因为所有放入栈中的元素都会逆序取出。伪代码如下：
+
+    ```python
+    #pseudo code
+    string="abcde"
+    string_rev=""
+    stack=Stack()
+    for s in string:
+        stack.push(s)
+    size=stack.size()
+    for i in range(size):
+        string_rev+=stack.pop()
+    print('reversed string is {}.'.format(string_rev)) #>> "edcba"
+    ```
+
+4. 队列（queue）：先进先出（FIFO）型数据结构。第一个添加的元素也是第一个移除的元素。
+    * 队列的4个基本方法：
+      * `enqueue` : 向队列中添加一个新元素;
+      * `dequeue` : 从队列中移除一个元素；
+      * `is_empty` : 队列为空时返回True，反之则返回False；
+      * `size` : 返回队列中元素的数量。
+      * 队列的实现：[code](queue.py)

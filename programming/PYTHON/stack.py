@@ -17,4 +17,13 @@ class Stack:
 
     def size(self):
         return len(self.items)
-        
+
+lst=[1,2,3,4,5]
+lst_rev=[]
+stack=Stack()
+for l in lst:
+    stack.push(l)
+size=stack.size()
+for i in range(size):
+    lst_rev.append(stack.pop())
+print('reversed list is {}.'.format(lst_rev)) #>> "edcba"
