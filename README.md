@@ -10,13 +10,13 @@ This subject include study notes, focused on techniques. My major interests are 
 
 This subject include my thinking in data collection, analysis and visualization, focused on theoritical stuff. Obviously I'm an expert of it,there will be mistakes and childish points, but as they say, the early bird catches the worm. I will be using MS EXCEL as platform for now and gradually transit to Python/R.
 
-----
+---
 
-## CATALOG
+archive of blogs
 
-BELOW ARE BLOG LIST, ORDER BY DATE DESCENDING.
-
-1. sql语法总结`(in work)`
-2. python无师自通studyNotes_highlight`(in work: PartIII-CH20)`
-
-...
+* programming
+  * python
+    * [python无师自通_学习笔记(finished)](Python无师自通_Hightlight.md)
+  * vba
+    * [VBA环境中一种递归获取文件路径的方法(finished)](VBA实现递归获取文件路径的方法.md)
+end of file
