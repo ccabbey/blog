@@ -12,14 +12,4 @@ This subject include my thinking in data collection, analysis and visualization,
 
 ---
 
-archive of blogs
-
-* programming
-  * python
-    * [python无师自通_学习笔记(finished)](Python无师自通_Hightlight.md)
-  * vba
-    * [VBA环境中一种递归获取文件路径的方法(finished)](VBA实现递归获取文件路径的方法.md)
-
----
-
 end of file
