@@ -4,7 +4,7 @@
 
 运行环境RSTUDIO，最终效果如图：
 
-![](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191012205048.png)
+![boxplot](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191012205048.png)
 
 R脚本如下：
 
