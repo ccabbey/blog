@@ -1,487 +1,518 @@
 # Study Notes of Statistics,4th edition by David Freedman
 
+author: Alex Li
+
+This is my study notes collection on *Statistics,4th edition* by `David Freedman`
+
 ```temporarily ignored section
+below are section that have been studied but not yet organized.
 
 ## PART I. DESIGN OF EXPERIMENTS...P19
 
 ### Chapter 1. Controlled Experiments...P21
 
-1. The Salk Vaccine Field Trial...P21
+#### 1. The Salk Vaccine Field Trial
 
-2. The Portacaval Shunt...P25
+#### 2. The Portacaval Shunt
 
-3. Historical Controls...P26
+#### 3. Historical Controls
 
-4. Summary...P28
+#### 4. Summary
 
 ### Chapter 2. Observational Studies...P30
 
-1. Introduction...P30
+#### 1. Introduction
 
-2. The Clofibrate Trial...P31
+#### 2. The Clofibrate Trial
 
-3. More Examples...P33
+#### 3. More Examples
 
-4. Sex Bias in Graduate Admissions...P35
+#### 4. Sex Bias in Graduate Admissions
 
-5. Confounding...P38
+#### 5. Confounding
 
-6. Review Exercises...P42
+#### 6. Review Exercises
 
-7. Summary and Overview...P45
+#### 7. Summary and Overview
 
 ```
 
-## PART II. DESCRIPTIVE STATISTICS...P47
+## PART II. DESCRIPTIVE STATISTICS 描述性统计...P47
 
-Descriptive statistics : 描述性统计
+### Chapter 3. The Histogram 直方图...P49
 
-### Chapter 3. The Histogram...P49
+#### 1.Introduction
 
-1. Introduction...P49
+直方图的横轴表示组间隔（class intervals)，不一定需要纵轴（vertical scale)。每一个柱形（block）的面积表示所占总体的百分比。
 
-2. Drawing a Histogram...P53
+#### 2. Drawing a Histogram
 
-3. The Density Scale...P56
+如何计算柱形的高度：高度=组百分比/区间长度
 
-4. Variables...P60
+#### 3. The Density Scale 密度标度
 
-5. Controlling for a Variable...P63
+通常在直方图的纵轴上使用密度标度（density scale），此时柱形的高度代表了聚集度（crowding），即每单位横坐标所占的百分比（percentage per horizontal unit）。所以直方图的总面积应该是100%。
 
-6. Cross-Tabulation...P65
+#### 4. Variables
 
-7. Selective Breeding...P66
+* 变量（variable）是指，随每一次实验而发生变化的特性（characteristic）。
+* 变量的类型：`定性的`（qualitative）或`定量的`（quantitative）。其中定量型变量又分为`离散型`（discrete）和`连续型`（continuous）。
+* 离散型变量：变量值具有固定间隔，可以一一列举（For a discrete variable, the values can only differ by `fixed amounts`.），比如家庭成员数。
+* 连续型变量：变量值不存在一个最小间隔（the difference can be arbitrarily small），比如年龄。
+* 直方图分布表（distribution table）组距（class interval）的选择，一般先选取`10至15`组区间，并根据效果进行调整。另外应注意`端点约定`问题（endpoint convention）。端点约定是指刚好落在边界上的数值如何处理。对于离散型变量，可以使区间关于变量值居中（center the class intervals at the possible values）。
 
-8. Review Exercises...P68
+#### 5. Controlling for a Variable
 
-9. Summary...P74
+#### 6. Cross-Tabulation 交叉表
+
+交叉表是在分布表（对应一个变量）的基础上，把额外的变量（比如年龄）以分组的形式增加维度，同时在每个分组内进行treatment group和control group的对比。[add P47 picture]
+
+#### 7. Selective Breeding 选择育种
+
+本节讲述了Robert Tryon对于心理学家Charles Spearman在1927年提出的“一般智力（general intelligence）”理论的验证。
+
+Spearman提出，智力测验的分数由两个因素组成：一般智力因素和能力因素。前者是先天决定的基础智力，可以遗传；后者是后天获得的能力，对于不同的测试有所不同。
+
+Tryon在小鼠上进行了选择育种实验，选择方法是：通过把小鼠放在迷宫中，并统计小鼠在最终走出迷宫前，走错的总次数作为得分。得分高（“笨”组）的老鼠相互繁殖，得分低（“聪明”组）的老鼠相互繁殖。7代之后，两组之间的分数分布已经非常之大，几乎不重叠了。
+
+然而，除了走迷宫这项测试外，在其他测试中（比如区分形状和光线强度），两组老鼠几乎没有差别。这与Spearman的“一般智力”理论相悖。不过，Tryon的确证明了某些心理学差异是可以被选择性遗传的，“聪明”的老鼠看起来更不合群，更适应迷宫中的生活，“笨”的老鼠却完全相反。
+
+#### 8. Review Exercises
+
+#### 9. Summary...P56
+
+1. 直方图通过面积来表示百分比，其由一系列柱形组成。每一个柱形的面积表示其所对应的的分组区间（class interval）所占总体的比例。
+2. 在密度标度（density scale）下，柱形的高度等于每单位分组区间所占总体的百分比。
+3. 在密度标度下，面积被称作百分比，总的面积等于100%。两个分组区间的总面积等于其对应的总体比例。
+4. 变量是研究对象的特征（A variable is a characteristic of the subjects in a study），变量分为定性型和定量型，定量型变量又分为离散型和连续型。
+5. 混合因素（confounding factor）可以通过交叉表（cross-tab）来进行控制。
 
 ### Chapter 4. The Average and the Standard Deviation...P75
 
-1. Introduction...P75
+#### 1. Introduction
 
-2. The Average...P76
+#### 2. The Average
 
-3. The Average and the Histogram...P79
+#### 3. The Average and the Histogram
 
-4. The Root-Mean-Square...P84
+#### 4. The Root-Mean-Square 均方根(r.m.s.)
 
-5. The Standard Deviation...P85
+#### 5. The Standard Deviation 标准差
 
-6. Computing the Standard Deviation...P89
+#### 6. Computing the Standard Deviation
 
-7. Using a Statistical Calculator...P92
+#### 7. Using a Statistical Calculator
 
-8. Review Exercises...P92
+#### 8. Review Exercises
 
-9. Summary...P94
+#### 9. Summary
 
 ### Chapter 5. The Normal Approximation for Data...P96
 
-1. The Normal Curve...P96
+#### 1. The Normal Curve
 
-2. Finding Areas under the Normal Curve...P100
+#### 2. Finding Areas under the Normal Curve
 
-3. The Normal Approximation for Data...P103
+#### 3. The Normal Approximation for Data
 
-4. Percentiles...P106
+#### 4. Percentiles
 
-5. Percentiles and the Normal Curve...P108
+#### 5. Percentiles and the Normal Curve
 
-6. Change of Scale...P110
+#### 6. Change of Scale
 
-7. Review Exercises...P111
+#### 7. Review Exercises
 
-8. Summary...P114
+#### 8. Summary
 
 ### Chapter 6. Measurement Error...P115
 
-1. Introduction...P115
+#### 1. Introduction
 
-2. Chance Error...P115
+#### 2. Chance Error
 
-3. Outliers...P120
+#### 3. Outliers
 
-4. Bias...P121
+#### 4. Bias
 
-5. Review Exercises...P122
+#### 5. Review Exercises
 
-6. Special Review Exercises...P123
+#### 6. Special Review Exercises
 
-7. Summary and Overview...P126
+#### 7. Summary and Overview
 
 ### Chapter 7. Plotting Points and Lines...P128
 
-1. Reading Points off a Graph...P128
+#### 1. Reading Points off a Graph
 
-2. Plotting Points...P130
+#### 2. Plotting Points
 
-3. Slope and Intercept...P131
+#### 3. Slope and Intercept
 
-4. Plotting Lines...P132
+#### 4. Plotting Lines
 
-5. The Algebraic Equation for a Line...P133
+#### 5. The Algebraic Equation for a Line
 
 ## PART III. CORRELATION AND REGRESSION...P135
 
 ### Chapter 8. Correlation...P137
 
-1. The Scatter Diagram...P137
+#### 1. The Scatter Diagram
 
-2. The Correlation Coefficient...P143
+#### 2. The Correlation Coefficient
 
-3. The SD Line...P148
+#### 3. The SD Line
 
-4, Computing the Correlation Coefficient...P150
+#### 4. Computing the Correlation Coefficient
 
-5. Review Exercises...P152
+#### 5. Review Exercises
 
-6. Summary...P157
+#### 6. Summary
 
 ### Chapter 9. More about Correlation...P159
 
-1. Features of the Correlation Coefficient...P159
+#### 1. Features of the Correlation Coefficient
 
-2. Changing SDs...P162
+#### 2. Changing SDs
 
-3. Some Exceptional Cases...P165
+#### 3. Some Exceptional Cases
 
-4. Ecological Correlations...P166
+#### 4. Ecological Correlations
 
-5. Association is Not Causation...P168
+#### 5. Association is Not Causation
 
-6. Review Exercises...P171
+#### 6. Review Exercises
 
-7. Summary...P175
+#### 7. Summary
 
 ### Chapter 10. Regression...P176
 
-1. Introduction...P176
+#### 1. Introduction
 
-2. The Graph of Averages...P180
+#### 2. The Graph of Averages
 
-3. The Regression Method for Individuals...P183
+#### 3. The Regression Method for Individuals
 
-4. The Regression Fallacy...P187
+#### 4. The Regression Fallacy
 
-5. There Are Two Regression Lines...P192
+#### 5. There Are Two Regression Lines
 
-6. Review Exercises...P194
+#### 6. Review Exercises
 
-7. Summary...P196
+#### 7. Summary
 
 ### Chapter 11. The R.M.S. Error for Regression...P198
 
-1. Introduction...P198
+#### 1. Introduction
 
-2. Computing the R.MLS. Error...P203
+#### 2. Computing the R.MLS. Error
 
-3. Plotting the Residuals...P205
+#### 3. Plotting the Residuals
 
-4. Looking at Vertical Strips...P208
+#### 4. Looking at Vertical Strips
 
-5. Using the Normal Curve Inside a Vertical Strip...P213
+#### 5. Using the Normal Curve Inside a Vertical Strip
 
-6. Review Exercises...P216
+#### 6. Review Exercises
 
-7. Summary...P219
+#### 7. Summary
 
 ### Chapter 12. The Regression Line...P220
 
-1. Slope and Intercept...P220
+#### 1. Slope and Intercept
 
-2. The Method of Least Squares...P226
+#### 2. The Method of Least Squares
 
-3. Does the Regression Make Sense?...P229
+#### 3. Does the Regression Make Sense?
 
-4. Review Exercises...P231
+#### 4. Review Exercises
 
-5. Summary and Overview...P234
+#### 5. Summary and Overview
 
 ## PART V. PROBABILITY...P237
 
 ### Chapter 13. What Are the Chances?...P239
 
-1. Introduction...P239
+#### 1. Introduction
 
-2. Conditional Probabilities...P244
+#### 2. Conditional Probabilities
 
-3. The Multiplication Rule...P246
+#### 3. The Multiplication Rule
 
-4. Independence...P248
+#### 4. Independence
 
-5. The Collins Case...P251
+#### 5. The Collins Case
 
-6. Review Exercises...P252
+#### 6. Review Exercises
 
-7. Summary...P254
+#### 7. Summary
 
 ### Chapter 14. More about Chance...P255
 
-1. Listing the Ways...P255
+#### 1. Listing the Ways
 
-2. The Addition Rule...P259
+#### 2. The Addition Rule
 
-3. Two FAQs (Frequently Asked Questions)...P261
+#### 3. Two FAQs (Frequently Asked Questions)
 
-4. The Paradox of the Chevalier De Méré...P266
+#### 4. The Paradox of the Chevalier De Méré
 
-5. Are Real Dice Fair?...P270
+#### 5. Are Real Dice Fair?
 
-6. Review Exercises...P270
+#### 6. Review Exercises
 
-7. Summary...P272
+#### 7. Summary
 
 ### Chapter 15. The Binomial Formula...P273
 
-1. Introduction...P273
+#### 1. Introduction
 
-2. The Binomial Formula...P277
+#### 2. The Binomial Formula
 
-3. Review Exercises...P279
+#### 3. Review Exercises
 
-4. Special Review Exercises...P281
+#### 4. Special Review Exercises
 
-5. Summary and Overview...P286
+#### 5. Summary and Overview
 
 ## PART V. CHANCE VARIABILITY...P289
 
 ### Chapter 16. The Law of Averages...P291
 
-1. What Does the Law of Averages Say?...P291
+#### 1. What Does the Law of Averages Say?
 
-2. Chance Processes...P296
+#### 2. Chance Processes
 
-3. The Sum of Draws...P297
+#### 3. The Sum of Draws
 
-5. Review Exercises...P303
+#### 5. Review Exercises
 
-6. Summary...P305
+#### 6. Summary
 
 ### Chapter 17. The Expected Value and Standard Error...P306
 
-1. The Expected Value...P306
+#### 1. The Expected Value
 
-2. The Standard Error...P308
+#### 2. The Standard Error
 
-3. Using the Normal Curve...P312
+#### 3. Using the Normal Curve
 
-4. A Short-Cut...P316
+#### 4. A Short-Cut
 
-5. Classifying and Counting...P317
+#### 5. Classifying and Counting
 
-6. Review Exercises...P322
+#### 6. Review Exercises
 
-7. Postscript...P325
+#### 7. Postscript
 
-8. Summary...P325
+#### 8. Summary
 
 ### Chapter 18. The Normal Approximation for Probability Histograms...P326
 
-1. Introduction...P326
+#### 1. Introduction
 
-2. Probability Histograms...P328
+#### 2. Probability Histograms
 
-3. Probability Histograms and the Normal Curve...P333
+#### 3. Probability Histograms and the Normal Curve
 
-4. The Normal Approximation...P335
+#### 4. The Normal Approximation
 
-5. The Scope of the Normal Approximation...P337
+#### 5. The Scope of the Normal Approximation
 
-6. Conclusion...P343
+#### 6. Conclusion
 
-7. Review Exercises...P345
+#### 7. Review Exercises
 
-8. Summary...P347
+#### 8. Summary
 
 ## PART VI. SAMPLING...P349
 
 ### Chapter 19. Sample Surveys...P351
 
-1. Introduction...P351
+#### 1. Introduction
 
-2. The Literary Digest Poll...P352
+#### 2. The Literary Digest Poll
 
-3. The Year the Polls Elected Dewey...P355
+#### 3. The Year the Polls Elected Dewey
 
-4. Using Chance in Survey Work...P357
+#### 4. Using Chance in Survey Work
 
-5. How Well Do Probability Methods Work?...P360
+#### 5. How Well Do Probability Methods Work?
 
-6. A Closer Look at the Galiup Poll...P361
+#### 6. A Closer Look at the Galiup Poll
 
-7. Telephone Surveys...P364
+#### 7. Telephone Surveys
 
-8. Chance Error and Bias...P366
+#### 8. Chance Error and Bias
 
-9. Review Exercises...P369
+#### 9. Review Exercises
 
-10. Summary...P371
+#### 10. Summary
 
 ### Chapter 20. Chance Errors in Sampling...P373
 
-1. Introduction...P373
+#### 1. Introduction
 
-2. The Expected Value and Standard Error...P377
+#### 2. The Expected Value and Standard Error
 
-3. Using the Normal Curve...P380
+#### 3. Using the Normal Curve
 
-4. The Correction Factor...P385
+#### 4. The Correction Factor
 
-5. The Gallup Poll...P388
+#### 5. The Gallup Poll
 
-6. Review Exercises...P389
+#### 6. Review Exercises
 
-7. Summary...P391
+#### 7. Summary
 
 ### Chapter 21. The Accuracy of Percentages...P393
 
-1. Introduction...P393
+#### 1. Introduction
 
-2. Confidence Intervals...P399
+#### 2. Confidence Intervals
 
-3. Interpreting a Confidence Interval...P401
+#### 3. Interpreting a Confidence Interval
 
-4. Caveat Emptor...P405
+#### 4. Caveat Emptor
 
-5. The Gallup Poll...P407
+#### 5. The Gallup Poll
 
-6. Review Exercises...P409
+#### 6. Review Exercises
 
-7. Summary...P412
+#### 7. Summary
 
 ### Chapter 22. Measuring Employment and Unemployment...P413
 
-1. Introduction...P413
+#### 1. Introduction
 
-2. The Design of the Current Population Survey...P414
+#### 2. The Design of the Current Population Survey
 
-3. Carrying out the Survey...P416
+#### 3. Carrying out the Survey
 
-4. Weighting the Sample...P419
+#### 4. Weighting the Sample
 
-5. Standard Errors...P420
+#### 5. Standard Errors
 
-6. The Quality of the Data...P422
+#### 6. The Quality of the Data
 
-7. Bias...P422
+#### 7. Bias
 
-8. Review Exercises...P423
+#### 8. Review Exercises
 
-9. Summary...P425
+#### 9. Summary
 
 ### Chapter 23. The Accuracy of Averages...P427
 
-1. Introduction...P427
+#### 1. Introduction
 
-2. The Sample Average...P433
+#### 2. The Sample Average
 
-3. Which SE?...P440
+#### 3. Which SE?
 
-4. A Reminder...P442
+#### 4. A Reminder
 
-5. Review Exercises...P443
+#### 5. Review Exercises
 
-6. Special Review Exercises...P446
+#### 6. Special Review Exercises
 
-7. Summary and Overview...P454
+#### 7. Summary and Overview
 
 ## PART VII. CHANCE MODELS...P457
 
 ### Chapter 24. A Model for Measurement Error...P459
 
-1. Estimating the Accuracy of an Average...P459
+#### 1. Estimating the Accuracy of an Average
 
-2. Chance Models...P463
+#### 2. Chance Models
 
-3. The Gauss Model...P468
+#### 3. The Gauss Model
 
-4. Conclusion...P472
+#### 4. Conclusion
 
-5. Review Exercises...P473
+#### 5. Review Exercises
 
-6. Summary...P475
+#### 6. Summary
 
 ### Chapter 25. Chance Models in Genetics...P476
 
-1. How Mendel Discovered Genes...P476
+#### 1. How Mendel Discovered Genes
 
-2. Did Mendel’s Facts Fit His Model?...P481
+#### 2. Did Mendel’s Facts Fit His Model?
 
-3. The Law of Regression...P483
+#### 3. The Law of Regression
 
-4. An Appreciation of the Model...P486
+#### 4. An Appreciation of the Model
 
-5. Review Exercises...P488
+#### 5. Review Exercises
 
-6. Summary and Overview...P489
+#### 6. Summary and Overview
 
 ## PART VIII. TESTS OF SIGNIFICANCE...P491
 
 ### Chapter 26. Tests of Significance...P493
 
-1. Introduction...P493
+#### 1. Introduction
 
-2. The Null and the Alternative...P495
+#### 2. The Null and the Alternative
 
-3. Test Statistics and Significance Levels...P496
+#### 3. Test Statistics and Significance Levels
 
-4. Making a Test of Significance...P500
+#### 4. Making a Test of Significance
 
-5. Zero-One Boxes...P501
+#### 5. Zero-One Boxes
 
-6. The t-Test...P506
+#### 6. The t-Test
 
-7. Review Exercises...P513
+#### 7. Review Exercises
 
-8. Summary...P518
+#### 8. Summary
 
 ### Chapter 27. More Tests for Averages...P519
 
-1. The Standard Error for a Difference...P519
+#### 1. The Standard Error for a Difference
 
-2. Comparing Two Sample Averages...P521
+#### 2. Comparing Two Sample Averages
 
-3. Experiments...P526
+#### 3. Experiments
 
-4. More on Experiments...P530
+#### 4. More on Experiments
 
-5. When Does the z-Test Apply?...P535
+#### 5. When Does the z-Test Apply?
 
-6. Review Exercises...P536
+#### 6. Review Exercises
 
-7. Summary...P539
+#### 7. Summary
 
 ### Chapter 28. The Chi-Square Test...P541
 
-1. Introduction...P541
+#### 1. Introduction
 
-2. The Structure of the x2-Test...P548
+#### 2. The Structure of the x2-Test
 
-3. How Fisher Used the x2-Test...P551
+#### 3. How Fisher Used the x2-Test
 
-4. Testing Independence...P553
+#### 4. Testing Independence
 
-5. Review Exercises...P558
+#### 5. Review Exercises
 
-6. Summary...P562
+#### 6. Summary
 
 ### Chapter 29. A Closer Look at Tests of Significance...P563
 
-1. Was the Result Significant?...P563
+#### 1. Was the Result Significant?
 
-2. Data Snooping...P565
+#### 2. Data Snooping
 
-3. Was the Result Important?...P570
+#### 3. Was the Result Important?
 
-4. The Role of the Model...P573
+#### 4. The Role of the Model
 
-5. Does the Difference Prove the Point?...P578
+#### 5. Does the Difference Prove the Point?
 
-6. Conclusion...P580
+#### 6. Conclusion
 
-7. Review Exercises...P581
+#### 7. Review Exercises
 
-8. Special Review Exercises...P583
+#### 8. Special Review Exercises
 
-9. Summary and Overview...P594
+#### 9. Summary and Overview
