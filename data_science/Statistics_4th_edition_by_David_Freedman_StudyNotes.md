@@ -63,6 +63,8 @@ below are section that have been studied but not yet organized.
 
 #### 5. Controlling for a Variable
 
+Pass
+
 #### 6. Cross-Tabulation 交叉表
 
 交叉表是在分布表（对应一个变量）的基础上，把额外的变量（比如年龄）以分组的形式增加维度，同时在每个分组内进行treatment group和control group的对比。[add P47 picture]
@@ -87,29 +89,92 @@ Tryon在小鼠上进行了选择育种实验，选择方法是：通过把小鼠
 4. 变量是研究对象的特征（A variable is a characteristic of the subjects in a study），变量分为定性型和定量型，定量型变量又分为离散型和连续型。
 5. 混合因素（confounding factor）可以通过交叉表（cross-tab）来进行控制。
 
-### Chapter 4. The Average and the Standard Deviation...P75
+### Chapter 4. The Average and the Standard Deviation 平均数和标准差...P75
 
 #### 1. Introduction
 
+* 直方图可以用于概括大量的数据的特征。通常，可以使用直方图的中心和关于中心的散布程度，来更加“激进地”概括数据特征。
+* 平均数（average）和中位数（median）都是用来找到数据集的中心（center）。
+* 标准差（standard deviation）用于衡量关于平均数的散布（spread），四分位数（interquartile）也用于衡量散布。
+
 #### 2. The Average
+
+* 平均数等于一组数字的总和，除以数字的个数。平均数是一种很强大的汇总数据的方法，代价是消除（smoothing away）了个体差异。
+* 横向研究（cross-sectional study）：在同一个时间点上比较不同（组）的个体。
+* 纵向研究（longitudinal study）：在不同的时间点上比较同一（组）个体。
+* 如果一项研究的得出了与年龄影响有关（effects of age）的结论，需要知道数据来源是横向的还是纵向的。
 
 #### 3. The Average and the Histogram
 
-#### 4. The Root-Mean-Square 均方根(r.m.s.)
+* A histogram balances when supported at the average.把直方图看做一个跷跷板，支点是平均数，那么直方图将处于平衡状态。
+* 在直方图的横轴上同时标注平均数和中位数，那么将有如下的性质：
+  * 小于等于平均数的数值之和=大于等于平均数的数值之和。
+  * 小于等于中位数的数值个数=大于等于平均数的数值个数。对于使用density scale的直方图，即中位数左右（包括中位数本身）`面积`相等。
+* 中位数与平均数的相对位置：
+  * 左偏型：平均数大于中位数
+  * 对称型：平均数近似于中位数
+  * 右偏型：平均数小于中位数
+  * 可以理解为，中位数总是倾向于靠近分布集中的位置，但平均数总是想靠近“尾巴”的方向，因为尾巴（极大极小值）具有更大的权重。![Figure 7. The tails of a histogram](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191021190933.png)
+
+#### 4. The Root-Mean-Square 平方均值(r.m.s.)
+
+* 均方根（root-mean-square, abbr. r.m.s.），又叫平方均值（quadratic mean），平方开方数。其是指，所有数据（entries）的平方和的平均数的平方根，即：先平方，再平均，再开方。
+
+$$ r.m.s.=\sqrt{\frac{\sum{x_i^{2}}}{n}} $$
+
+* 平方均值总是比绝对平均值要大一点（参考[均值不等式](https://baike.baidu.com/item/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F/8046796?fr=aladdin)），除非所有的数据都相等。
+
+$$ Q_n=\sqrt{\frac{x_1^2+x_2^2+\cdots+x_n^2}{n}}，平方均值 $$
+$$ A_n=\sqrt{\frac{x_1+x_2+\cdots+x_n}{n}} ，算数平均值 $$
+$$ Q_n \geq A_n $$
+
+* 平方均值的意义？参考：[计算交流电的电流有效值](https://en.wikipedia.org/wiki/Root_mean_square)，[THE ROOT-MEAN-SQUARE](http://www.analytictech.com/mb313/rootmean.htm)。
+
+>The easiest way to do this is to just erase the signs and compute the average of the new set. But ... that's not how statisticians decided to do it. For reasons of their convenience, they chose a different approach. Instead of wiping out the signs, they square every number (which makes them all positive), then take the square root of the average.
 
 #### 5. The Standard Deviation 标准差
 
+* 想象一组数据在平均值附近散布开来，其散布的程度则可以用标准差（standard deviation, SD）衡量。
+* 标准差用来衡量一组数据偏离`平均值`的程度，类似于`平均偏差`（average deviation）。
+* 粗略估算，约68%的观测值（entries）分布在距离平均数一个标准差（即avg ± 1SD）的范围内。约95%的观测值分布在距离平均数两个标准差（即avg ± 2SD）的范围内，剩余的5%在两个标准差之外。这一规律对很多观测都适用，但并不是绝对的。（引申：6Sigma的原理？）
+
 #### 6. Computing the Standard Deviation
 
+* SD = r.m.s deviation from average。即，SD表示观测值相对平均值偏差的平方均值。
+
+$$ SD=\sqrt{\frac{\sum{(X_i-\bar{X})^{2}}}{N}} $$
+
+* 为什么不推荐使用方差（variance）？虽然方差和标准差具有相似的效果，但标准差和观测值具有相同的单位，而方差的单位是观测值单位的平方，不便于理解。
+* SD的另一种简便求法：平方数的平均数 - 平均数的平方，再求平方根。但这种方法的精度很容易受到圆整误差影响。
+
+$$ SD=\sqrt{(\frac{\sum{X_i^{2}}}{N})-(\frac{\sum{X_i}}{N})^{2}} $$
+
+* 对于一组数据，
+
+$$ 当 X_i+\Delta：\bar{X}增加\Delta，SD不变；$$
+$$ 当X_i\cdot{\Delta}：\bar{X}和SD均\cdot{\Delta} $$
+
 #### 7. Using a Statistical Calculator
+
+Pass
 
 #### 8. Review Exercises
 
 #### 9. Summary
 
-### Chapter 5. The Normal Approximation for Data...P96
+* 一组典型的数字可以通过平均数（average）和标准差（SD）来进行概括（summarize）。
+* 一组数据的`平均数`等于`数据的总和`除以`数据个数`。
+* 平均数位于直方图的“重心”，即左右两边观测值之和相等。而中位数位于直方图的“中心”，即左右两边观测值数量相同。
+* 平方均值（r.m.s.）衡量一组数据的绝对大小，不计正负。其值等于所有观测值先平方和，再求平均，再开根号。
+* 标准差（SD）衡量一组数据相对平均值的距离，或观测值偏离实际中心（指平均数）的平均距离。更准确地说，`标准差是观测值相对平均值偏差的平方均值`。
+* 大约68%的观测值都位于距离平均值±1SD的区间内，95%的观测值都位于距离平均值±2SD的区间内。这个规律并非绝对。
+* 如果某项研究得出了关于年龄具有某些效果的结论，那么需要明确研究数据是横向研究（同一时间点不同对象）还是纵向研究（不同时间点同一对象）。
+
+### Chapter 5. The Normal Approximation for Data 数据的正态近似...P96
 
 #### 1. The Normal Curve
+
+![the standard units](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191022103424.png)
 
 #### 2. Finding Areas under the Normal Curve
 
