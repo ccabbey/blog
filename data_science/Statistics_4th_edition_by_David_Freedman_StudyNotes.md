@@ -43,15 +43,19 @@ below are section that have been studied but not yet organized.
 
 #### 1.Introduction
 
-直方图的横轴表示组间隔（class intervals)，不一定需要纵轴（vertical scale)。每一个柱形（block）的面积表示所占总体的百分比。
+直方图的横轴表示组距（class intervals)，不一定需要纵轴（vertical scale)。每一个柱形（block）的面积表示所占总体的百分比。
 
 #### 2. Drawing a Histogram
 
-如何计算柱形的高度：高度=组百分比/区间长度
+如何计算柱形的高度：高度=组百分比/组距
 
 #### 3. The Density Scale 密度标度
 
 通常在直方图的纵轴上使用密度标度（density scale），此时柱形的高度代表了聚集度（crowding），即每单位横坐标所占的百分比（percentage per horizontal unit）。所以直方图的总面积应该是100%。
+
+>Definitions: If the frequency of the ith bar is $f_i$, then its relative frequency is $r_i=f_i/n$, where n is the sample size. Its density is $d_i=r_i/w_i$, where $w_i$ is its width. Ordinarily, you should make a density histogram only if each bar has the same width.
+
+延伸资料：[频率（frequency）、相对频率(relative frequency)和密度(density)有什么区别？](https://math.stackexchange.com/questions/2666834/what-is-the-difference-between-frequency-and-density-in-a-histogram)
 
 #### 4. Variables
 
@@ -59,7 +63,7 @@ below are section that have been studied but not yet organized.
 * 变量的类型：`定性的`（qualitative）或`定量的`（quantitative）。其中定量型变量又分为`离散型`（discrete）和`连续型`（continuous）。
 * 离散型变量：变量值具有固定间隔，可以一一列举（For a discrete variable, the values can only differ by `fixed amounts`.），比如家庭成员数。
 * 连续型变量：变量值不存在一个最小间隔（the difference can be arbitrarily small），比如年龄。
-* 直方图分布表（distribution table）组距（class interval）的选择，一般先选取`10至15`组区间，并根据效果进行调整。另外应注意`端点约定`问题（endpoint convention）。端点约定是指刚好落在边界上的数值如何处理。对于离散型变量，可以使区间关于变量值居中（center the class intervals at the possible values）。
+* 直方图分布表（distribution table）组距（class interval）的选择，一般先选取`10至15`组距，并根据效果进行调整。另外应注意`端点约定`问题（endpoint convention）。端点约定是指刚好落在边界上的数值如何处理。对于离散型变量，可以使区间关于变量值居中（center the class intervals at the possible values）。
 
 #### 5. Controlling for a Variable
 
@@ -83,9 +87,9 @@ Tryon在小鼠上进行了选择育种实验，选择方法是：通过把小鼠
 
 #### 9. Summary...P56
 
-1. 直方图通过面积来表示百分比，其由一系列柱形组成。每一个柱形的面积表示其所对应的的分组区间（class interval）所占总体的比例。
-2. 在密度标度（density scale）下，柱形的高度等于每单位分组区间所占总体的百分比。
-3. 在密度标度下，面积被称作百分比，总的面积等于100%。两个分组区间的总面积等于其对应的总体比例。
+1. 直方图通过面积来表示百分比，其由一系列柱形组成。每一个柱形的面积表示其所对应的的组距（class interval）所占总体的比例。
+2. 在密度标度（density scale）下，柱形的高度等于每单位组距所占总体的百分比。
+3. 在密度标度下，面积被称作百分比，总的面积等于100%。两个组距的总面积等于其对应的总体比例。
 4. 变量是研究对象的特征（A variable is a characteristic of the subjects in a study），变量分为定性型和定量型，定量型变量又分为离散型和连续型。
 5. 混合因素（confounding factor）可以通过交叉表（cross-tab）来进行控制。
 
@@ -158,7 +162,7 @@ $$ 当X_i\cdot{\Delta}：\bar{X}和SD均\cdot{\Delta} $$
 
 Pass
 
-#### 8. Review Exercises
+#### 8. Review Exercises(CH4)
 
 #### 9. Summary
 
@@ -170,41 +174,136 @@ Pass
 * 大约68%的观测值都位于距离平均值±1SD的区间内，95%的观测值都位于距离平均值±2SD的区间内。这个规律并非绝对。
 * 如果某项研究得出了关于年龄具有某些效果的结论，那么需要明确研究数据是横向研究（同一时间点不同对象）还是纵向研究（不同时间点同一对象）。
 
-### Chapter 5. The Normal Approximation for Data 数据的正态近似...P96
+### Chapter 5. The Normal Approximation for Data 正态近似...P96
 
 #### 1. The Normal Curve
 
+标准正态曲线（钟型曲线）的公式是：
+
+$$ y=\frac{100\%}{\sqrt{2\pi}}e^{-x^2/2}, \textnormal{where}\ e= 2.71828.... $$
+
 ![the standard units](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191022103424.png)
+
+正态曲线函数的数学推导起源于de Moivre（棣莫弗）关于二项分布的研究。参考：[The Normal Curve-wiki](https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83)
+
+使用`标准单位`（standard units, Also called standard scores, z-scores, sigma-scores）可以将直方图的横坐标转换为标准正态曲线的横坐标。1 标准单位=1 SD（也叫做Sigma）。
+
+常用百分比（标准单位下）：
+
+* ±1 SD（±1 Sigma）区间面积：68.27%
+* ±2 SD（±2 Sigma）区间面积：95.45%
+* ±3 SD（±3 Sigma）区间面积：99.73%，对应约2700PPM
+
+在进行标准单位变换时，密度标度（density scale）也需要进行变换，例如由：Percent Per Inch转化为Percent Per Standard Unit。转换公式为
+$$ 1PPSU=\frac{100\%}{1SU}=\frac{100\%}{1SD\ inch}=\frac{1}{SD}\cdot\frac{100\%}{1\ inch}=\frac{1}{SD}\cdot1PP\ inch$$
+
+参考上方的正态分布图，由于SD=3 inch，因此转为为标准单位后，10 PPinch=3 x 10 PPSU=30 PPSU，相当于PPSU的尺度被“压缩”了。
 
 #### 2. Finding Areas under the Normal Curve
 
+计算正态曲线包围面积的方法：
+
+![types of area](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191029142947.png)
+
+1. 内对称型：直接查正态分布表中对应的z值即可
+2. 外对称型：100%减去例1的面积
+3. 内单边型：例1的基础上除以2
+4. 不对称型：以中轴分割，左右侧分别按照例3计算，然后相加
+5. 外单边型：等于50%加上互补的半边面积，再用100%减去
+
 #### 3. The Normal Approximation for Data
 
-#### 4. Percentiles
+对一组数据进行正态近似的步骤：
+
+1. 计算平均值和标准差
+2. 将数据转换为标准单位（standard units）
+3. 通过上一章的方法查表计算区间面积
+4. 得到近似比例
+
+#### 4. Percentiles 百分位数
+
+对于服从正态分布的数据，可以用平均数和标准差作为统计概括。对于不服从正态分布的数据（比如人均收入分布等长尾（long tail）型数据），可以使用百分位数（percentiles）来进行概括。
+
+注意：百分位数（percentile）是数据中的某个具体值，而百分位等级（percentile rank）是百分比。
+
+四分位距（interquartile range）等于一组数据（从小到大排列）的3/4位数减去1/4位数。
+
+$$ interquartile\ range=\textnormal{75th\ percentile-25th\ percentile} $$
 
 #### 5. Percentiles and the Normal Curve
 
-#### 6. Change of Scale
+当直方图服从正态分布时，可以通过标准正态曲线来估计百分位数。
+
+#### 6. Change of Scale 尺度变换
+
+* 尺度变换是指对一组数据的比例尺（scale）进行变换。尺度变换不会影响其对应的标准单位。
+* 数据整体加a，平均值也加a，标准差不变。
+* 数据整体乘以a，平均值和标准差都会乘以a。
 
 #### 7. Review Exercises
 
 #### 8. Summary
 
-### Chapter 6. Measurement Error...P115
+1. 标准正态曲线关于0对称，曲线覆盖的总面积是100%。
+2. `标准单位`（standard units）描述观测值距离平均数多少个标准差（SD）。
+3. 多数直方图的形状都与正态曲线近似。
+4. 如果一组观测值服从正态曲线分布，那么观测值落在某个区间（interval）的百分比，等于转化成正态曲线后，组距对应的面积，面积可以通过查正态分布表进行估算。这个过程叫做正态近似（normal approximation）。
+5. 如果一组观测值的直方图很好的服从正态分布，那么可以通过`平均数`和`标准差`来概括这组数据。
+6. 无论一组观测值的直方图是否服从正态分布，都可以通过使用`百分位数`（percentiles）来进行概括。
+7. `尺度变换`（change of scale）：对（一组数据的）每一个观测值加（减）固定值，平均数也会加减相应值，但SD不变。对每一个观测值乘（除）固定值，平均数和SD都会乘除相应值，如果乘除的固定值为负，则要去除括号。
 
-#### 1. Introduction
+### Chapter 6. Measurement Error 测量误差...P115
 
-#### 2. Chance Error
+#### 1. Introduction(CH6)
 
-#### 3. Outliers
+#### 2. Chance Error 随机误差
 
-#### 4. Bias
+无论测量方法如何精确，测量总是会存在误差。
+
+重复测量得到的数据，通过计算标准差可以估计单次测量中随机误差的大小。
+
+$$ 测量值=真实值(exact\ value)+随机误差(chance\ error) $$
+
+上述公式蕴含的数学意义是：测量值的标准差一定等于随机误差的标准差，因为其本质是尺度变换（change of scale，参考CH5）。
+
+#### 3. Outliers 离群值
+
+通常，极端的测量值被视为离群值或异常值（outliers），如位于5个标准差之外的测量值。
+
+即使在严谨的实验中，也会出现误差很大的测量值，即所谓的异常值。由于正态分布实在是太普遍，因此一般都会选择忽略异常值。如果选择不忽略异常值，或证明异常值不是由随机误差导致，那么只能说明一点：这组数据不服从正态分布。
+
+#### 4. Bias 偏差
+
+偏差（bias），又称系统误差（systematic error），对于同一组测量值，`偏差`的方向都是相同的，而`随机误差`的方向是随机的。
+
+考虑系统误差时，测量值的组成为：
+
+$$ 测量值=真实值(exact\ value)+系统误差(bias)+随机误差(chance\ error) $$
+
+随机误差的大小可以通过重复测量进行估计，但系统误差只能通过与`外部标准`（external standard）或`理论推测`（theoretical prediction）比较来估计。
+
+参考资料：Accuracy, Precision, and Bias
+
+![Accuracy, Precision, and Bias](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191030224551.png)
+
+>We consider both bias and precision with respect to how well an estimator performs over many, many samples of the same size. The average of these multiple samples is called the expected value of the estimator.  
+Bias is a measure of how far the expected value of the estimate is from the true value of the parameter being estimated.  
+Precision is a measure of how similar the multiple estimates are to each other, not how close they are to the true value (which is bias).  
+Precision and bias are two different components of Accuracy.
+
+参考资料：[Precision and Bias](http://www.statisticalengineering.com/Weibull/precision-bias.html)
 
 #### 5. Review Exercises
 
 #### 6. Special Review Exercises
 
 #### 7. Summary and Overview
+
+1. 无论测量过程多么严谨，随机误差（chance error）总是存在的。但可通过进行重复测量（replicate measurement）来估计随机误差的大小。
+2. 在相同条件下进行重复测量，并计算测量值的标准差，即为随机误差的近似大小。
+3. 偏差（系统误差）会导致测量值向某一方向发生`固定`偏离。
+   $$测量值=真实值(exact\ value)+系统误差(bias)+随机误差(chance\ error)$$
+4. 测量值中出现少量的离群值（outliers）的正常的，但平均数和标准差SD会严重的收到离群值的影响。在这种情况下，直方图不会服从正态曲线，常见的做法是排除离群值，然后重新计算。
 
 ### Chapter 7. Plotting Points and Lines...P128
 
