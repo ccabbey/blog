@@ -151,12 +151,22 @@ $$ SD=\sqrt{\frac{\sum{(X_i-\bar{X})^{2}}}{N}} $$
 * 为什么不推荐使用方差（variance）？虽然方差和标准差具有相似的效果，但标准差和观测值具有相同的单位，而方差的单位是观测值单位的平方，不便于理解。
 * SD的另一种简便求法：平方数的平均数 - 平均数的平方，再求平方根。但这种方法的精度很容易受到圆整误差影响。
 
-$$ SD=\sqrt{(\frac{\sum{X_i^{2}}}{N})-(\frac{\sum{X_i}}{N})^{2}} $$
+$$ SD=D(X)=E(X^2)-E^2(X) ,\ 其中E(X)=\bar{X}$$
+
+* 上结论易证：
+
+$$\begin{aligned}
+D(X)=&\sum_{i=1}^n\frac{(X_i-E(X))^2}{n}\\
+&=X_1^2+E^2(X)-2X_1E(X)+\dots\\
+&=\frac{(X_1^2+\dots+X_n^2)+nE^2(X)-2E(X)(X_1+\dots+X_n)}{n}\\
+&=E(X^2)+E^2(X)-2E^2(X)\\
+&=E(X^2)-E^2(X)
+\end{aligned}$$
 
 * 对于一组数据，
 
-$$ 当 X_i+\Delta：\bar{X}增加\Delta，SD不变；$$
-$$ 当X_i\cdot{\Delta}：\bar{X}和SD均\cdot{\Delta} $$
+$$当X_i\pm\Delta时:\bar{X}\pm\Delta，SD不变；\\
+当X_i\cdot{\Delta}时：\bar{X}和SD均\cdot{\Delta}$$
 
 #### 7. Using a Statistical Calculator
 
@@ -178,7 +188,7 @@ Pass
 
 #### 1. The Normal Curve
 
-标准正态曲线（钟型曲线）的公式是：
+标准正态分布（钟型曲线）的`概率密度`是：
 
 $$ y=\frac{100\%}{\sqrt{2\pi}}e^{-x^2/2}, \textnormal{where}\ e= 2.71828.... $$
 
@@ -224,7 +234,7 @@ $$ 1PPSU=\frac{100\%}{1SU}=\frac{100\%}{1SD\ inch}=\frac{1}{SD}\cdot\frac{100\%}
 
 对于服从正态分布的数据，可以用平均数和标准差作为统计概括。对于不服从正态分布的数据（比如人均收入分布等长尾（long tail）型数据），可以使用百分位数（percentiles）来进行概括。
 
-注意：百分位数（percentile）是数据中的某个具体值，而百分位等级（percentile rank）是百分比。
+注意：百分位数（percentile）是数据中的某个具体值，而百分位秩（percentile rank）是百分比。
 
 四分位距（interquartile range）等于一组数据（从小到大排列）的3/4位数减去1/4位数。
 
@@ -240,7 +250,7 @@ $$ interquartile\ range=\textnormal{75th\ percentile-25th\ percentile} $$
 * 数据整体加a，平均值也加a，标准差不变。
 * 数据整体乘以a，平均值和标准差都会乘以a。
 
-#### 7. Review Exercises
+#### 7. Review Exercises(CH5)
 
 #### 8. Summary
 
@@ -293,9 +303,13 @@ Precision and bias are two different components of Accuracy.
 
 参考资料：[Precision and Bias](http://www.statisticalengineering.com/Weibull/precision-bias.html)
 
-#### 5. Review Exercises
+#### 5. Review Exercises(CH6)
 
-#### 6. Special Review Exercises
+PASS
+
+#### 6. Special Review Exercises(CH6)
+
+PASS
 
 #### 7. Summary and Overview
 
@@ -309,65 +323,208 @@ Precision and bias are two different components of Accuracy.
 
 #### 1. Reading Points off a Graph
 
+PASS
+
 #### 2. Plotting Points
 
-#### 3. Slope and Intercept
+PASS
+
+#### 3. Slope and Intercept 斜率和截距
+
+基本概念：
+
+* 直线上任意两点AB间，水平距离叫做run，竖直距离叫做rise/fall(取决于升高还是下降)。$slope(斜率)=rise/run$
+* 截距(intercept)是指直线在x=0位置的高度。一般坐标系xy轴都相交于0，有些特殊的坐标系相交于别的位置，这种情况下，截距仍然是x=0处的高度。
 
 #### 4. Plotting Lines
 
-#### 5. The Algebraic Equation for a Line
+PASS
+
+#### 5. The Algebraic Equation for a Line 直线的代数方程
+
+直线的一般方程为：$y=mx+b,slope=m,intercept=b$
 
 ## PART III. CORRELATION AND REGRESSION...P135
 
-### Chapter 8. Correlation...P137
+### Chapter 8. Correlation 相关...P137
 
-#### 1. The Scatter Diagram
+#### 1. The Scatter Diagram 散点图
 
-#### 2. The Correlation Coefficient
+直方图（histogram）适合研究单个变量，而散点图适合研究两个独立变量。
+
+自变量和因变量：
+
+* 自变量（independent variable）：用来预测或解释因变量的一个或多个变量，用x表示。
+* 因变量（dependent variable）：被预测或被解释的变量，用y表示。
+
+#### 2. The Correlation Coefficient 相关系数
+
+相关系数（correlation coefficient）是用来衡量线性关联（linear association），或是散点关于直线的聚集程度的指标，用r来表示。
+
+两个变量间的关系可用5个统计量概括（如下图所示）：
+
+* 自变量（x-values）的平均值和SD
+* 因变量（y-values）的平均值和SD
+* 相关系数r
+
+![Summarizing a scatter diagram](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191031235216.png)
+
+![the correlation coefficient](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191031235333.png)
+
+**相关系数r的计算方法：**
+
+将自变量和因变量转化成标准单位（Standard units），即$x_{SU}=(x-\bar{x})/\sigma$，相关系数r等于标准单位的xy乘积之和的平均数。公式为：
+
+$$ r=\frac{\sum_{1}^{n}{(x_{SU}\times {y_{SU})}}}{n}$$
+
+`参考资料：为什么r的范围是-1~+1？`
+
+对上式做一下转化，变为下图所示公式，根据柯西不等式可知，ABS(r)≤1。
+
+![correlation coefficient](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191109215729.png)
+
+r的另一种计算方法（协方差？）：
+
+$$ r=\frac{cov(x,y)}{(SD\ of\ x)\times (SD\ of\ y)},\ 其中\ cov(x,y)=(\bar{xy})-(\bar{x}\times \bar{y})$$
+
+**相关系数r的图形意义（graphic interpretation）：**
+
+* 在自变量和因变量的数据分布具有相同的平均值和SD的情况下，相关系数r可以是-1到+1之间的任意值。r越接近0，散点分布越散乱（formless），越接近1，散点越向直线聚拢（clustered）。当r=1时，称为完全相关（perfect correlation），即所有的散点均在一条直线上，这条线称为`标准差线（SD Line）`。
+* 当相关系数为正时，那么散点群（cloud）总体上是斜向上的方向，即正相关；反之是斜向下的方向，即负相关。
+* 标准差线（SD Line）是散点向其聚集的假想直线。也可以看做：距离均值点$(\bar{x},\bar{y})$具有相同标准差距离的所有点，即$(\bar{x}\pm{n\ SD},\bar{y}\pm{n\ SD})$的集合。
+* 标准差线的斜率为$k=SD_y/SD_x$。
+
+![Plotting the SD line.](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191109163902.png)
+
+*注意：r=0.8并不意味着80%的散点聚集在一条直线附近，也不代表其线性度（linearity）是r=0.4数据集的两倍。*
+
+//todo:相关系数r的数学意义将在回归一章中说明
+
+* 相关系数的原理：
+  * 把数据集的均值点看做原点，并划分出四个象限；
+  * 考虑公式$r=\sum{x\cdot y}/n$，如果数据落在一、三象限，那么公式中正数的比例就会增加，得到正相关的可能性也会增大，反之则负相关的可能性更大。
+
+![How the correlation coefficient works.](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191125133127.png)
 
 #### 3. The SD Line
 
+标准差线（SD Line）是指：。这是一条直线，其斜率为$k=SD_y/SD_x$。
+
 #### 4. Computing the Correlation Coefficient
 
-#### 5. Review Exercises
+内容合并至本章SECTION 2
 
-#### 6. Summary
+#### 5. Review Exercises(CH8)
+
+#### 6. Summary(CH8)
+
+合并至正文
 
 ### Chapter 9. More about Correlation...P159
 
 #### 1. Features of the Correlation Coefficient
 
+相关系数r没有单位，也不受尺度变换(change of scale)的影响。尺度变换包括：
+
+* 交换x和y的位置（关于y=x镜像）
+* 对x或y加减相同的数（平移）
+* 对x或y乘除相同的数（缩放）
+
 #### 2. Changing SDs
+
+散点图的（绝对）聚集度取决于x和y的标准差，SD越小，散点看上去就约聚集(clusterd)，但这并不意味相关系数就大，因为r衡量的是“相对的”聚集度，即散点分布在四个区间内的比例。
+
+![The effect of changing SDs.](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191125125351.png)
+![How the correlation coefficient works.](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191125133127.png)
+
+The r.m.s. vertical distance to the SD line equals:
+
+$$ \sqrt{2(1-\left|r\right|}\times the\ vertical\ SD$$
 
 #### 3. Some Exceptional Cases
 
+相关系数r衡量线性相关性，而不是普遍的相关性。
+
+相关系数准确地说应该是`线性相关系数`。其只对椭圆状分布（football-shaped）的散点有效。当有离群值（outliers）和非线性关系时，相关系数将严重失真。
+
+然而，绝大部分散点图中都会出现或多或少的离群值，如果有足够证据识别出离群值，那么应该舍弃离群值后再计算r。
+
 #### 4. Ecological Correlations
 
-#### 5. Association is Not Causation
+很多生态学、经济学、社会学中的数据都是基于比率或平均数得出（rates or averages）。这样会夸大相关性，因为这些统计量使个体差异平滑化。面对使用统计描述量绘制的散点图，要警惕被误导。参考下图：
 
-#### 6. Review Exercises
+![Ecological correlations are usually too big](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191125211535.png)
 
-#### 7. Summary
+#### 5. Association is Not Causation 相关性不等于因果性
+
+Correlation measures association. But association is not the same as causation.
+
+相关性可以衡量两个变量的关联，但关联并不一定以为着因果关系。也可能表明有一个（或多个）混杂变量在同时影响这两个变量。思考如下案例：
+
+* 问：受教育程度和失业率。在大萧条时期（1929-1933），受教育程度更高的人更倾向于拥有更短的失业时间。这能说明受教育可以使你避免失业吗？
+* 答：混淆的变量是`年龄`。看起来受教育确实可以降低失业率。然而，随着时间推移，平均受教育程度在逐渐提高（现在仍是这样）。实际上，雇主并不倾向雇佣受教育程度高的人，而是倾向于雇佣年轻的人，而年轻的人受教育程度普遍较高，因此造成了这种假象。
+* 问：物种的分布广度和时间跨度。腹足动物的化石记录显示，分布广度越大的动物，存活时间跨度越长，其相关系数r=0.64。一种说法认为，更广的分布可以降低，物种因毁灭性灾难导致灭绝的几率。这种说法对吗？
+* 答：这种说法有一定说服力，但其有一个隐含假设，即所有地区的腹足动物留下化石记录的概率是相同的。然而，另一种理论认为，问题出在化石记录本身，并不是只有分布广的动物时间跨度才长，而是其留下化石记录的几率较大，因为有些地区并不容易产生化石，动物曾经存在的记录也无从考证，从而造成这种`统计假象`。
+
+A statistical artifact(统计假象) is an inference that results from bias in the collection or manipulation of data.
+
+#### 6. Review Exercises(CH9)
+
+#### 7. Summary(CH9)
 
 ### Chapter 10. Regression...P176
 
-#### 1. Introduction
+#### 1. Introduction(CH10)
 
-#### 2. The Graph of Averages
+回归方法描述一个变量如何依赖于另一个变量。回归线（regression line）穿过平均点（point of averages）。
 
-#### 3. The Regression Method for Individuals
+y关于x的回归线`估计`了对应每一个x值的y值的平均数。之所以说估计，是因为由于随机误差的影响，实际样本的不同x值，对应的y值的平均数，不可能完全落在同一条直线。因此，回归方法是对`平均值变化`的估计：
 
-#### 4. The Regression Fallacy
+平均来看，x每增加1个SD，相应的y增加r个SD。其中r是y与x的相关系数。
+
+#### 2. The Graph of Averages 平均数图
+
+（接第1节）回归线是平均数图的平滑形式（smoothed version）。如果不考虑随机误差的影响，那么回归线和平均数图必然重合为同一条直线。
+
+![平均数图](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191226210236.png)
+
+注意：如果变量间存在非线性相关，不应该使用回归线。
+
+#### 3. The Regression Method for Individuals 用于个体的回归方法
+
+回归线可以用于预测个体值，但如果需要外推较远的数值（比如预测超过2米身高的父亲对应儿子的身高），或是属于不同类的对象（比如根据本校学生样本的结果外推其他学校，或是根据艺术课的结果外推数理课），要特别小心。
+
+#### 4. The Regression Fallacy 回归谬误
+
+考虑如下的案例：某学前班企图提高儿童的智商。儿童入学前接受学前测试，毕业后接受一次学后测试。两次测试的平均分接近100，SD约为15。由此看似乎学前班没有什么效果。然而进一步分析发现，学前测试中低于平均分的儿童在学后测试中平均提高了5分。相反，在学前测试中高于平均分的儿童，在学后测试中平均降低了5分。这能说明学前班的作用是将智商平均化吗？或是聪明的儿童与较笨的儿童一起玩后，两者的差异将逐渐减小吗？
+
+然而，并没有什么特殊的原因或是结论。实际上，在所有的测试--复测（test-reTest）情形中，测试中最低的那部分，在复测时会平均有所提高，反之亦然。这种现象叫做`“回归效应”`。如果误以为回归效应是由于某些重要因素引起，而非普通的随机变化，那么就犯了`回归谬误`。
+
+高尔顿（Galton）在研究父子身高关系时最先发现了回归效应。回归效应是由观察得到的事实，其本质是由于机会变异（chance variability），也就是“运气”。
+
+回归模型的基本方程式是：考试的观察分数=真实分数+机会误差。假设某总体的真实分数服从N(100,15)的正态分布，再假设机会误差为正值或负值的概率相同，大小为5。那么一个真实分数为135的人，在考试时可能得分130或140。现在假设一个人的考试得分是140（如图），那么他的真实分数可能是135或145，但是总的来说，135的可能性要大一些。为什么？因为真实分数为135的人要比145的人多（正态分布的性质）！对于低分的人，也是同样的道理。这就是回归效应的本质。
+
+![回归效应模型](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191226212224.png)
+
+附：在《女士品茶》中，提到了另一种反证方式。
+
+>假设不发生这种向平均值的回归，那么从平均意义上看，高身材父亲的儿子将与他们的父亲一样高，在这种情况下，一些儿子的身材必须高于他们的父亲，以抵消身材比父亲矮小者的影响，使平均值不变。高身材者这一代人的儿子也将如此，那么会有一些儿子身材更高。这个过程将一代一代延续下去。同样地，将会有一部分儿子身材比他们的父亲矮小，而且有一部分孙子将更加矮小，如此下去，不用多少代，人类种族就将由特别高和特别矮的两极构成。 上述的情形并没有发生，人类的身高在平均意义上趋向于保持稳定。只有当非常高的父亲其儿子平均身材变矮，而非常矮的父亲其儿子的平均身材变高，才能出现这种稳定。向平均值回归是一种保持稳定性的现象，它使得某给定物种代际之间大致相同。
 
 #### 5. There Are Two Regression Lines
+
+通常，我们使用y关于x的回归线，即每一个x对应的所有y的平均值的回归线。不过，也可以使用每一个y对应的所有x的平均值的回归线。这两者分别对应使用x预测y，或使用y预测x。一般来说，前者比较符合直观感受。
+
+![两种回归线](https://raw.githubusercontent.com/ccabbey/imagehosting/master/blog/20191226215029.png)
 
 #### 6. Review Exercises
 
 #### 7. Summary
 
-### Chapter 11. The R.M.S. Error for Regression...P198
+（略，已整理合并至章节中）
 
-#### 1. Introduction
+### Chapter 11. The R.M.S. Error for Regression 回归的均方根误差...P198
+
+#### 1. Introduction(CH11)
 
 #### 2. Computing the R.MLS. Error
 
