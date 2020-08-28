@@ -43,15 +43,15 @@ below are section that have been studied but not yet organized.
 
 #### 1.Introduction
 
-直方图的横轴表示组距（class intervals)，不一定需要纵轴（vertical scale)。每一个柱形（block）的面积表示所占总体的百分比。
+直方图的横轴表示小组区间（class intervals)，不一定需要纵轴（vertical scale)。每一个柱形（block）的面积表示所占总体的百分比。
 
 #### 2. Drawing a Histogram
 
-如何计算柱形的高度：高度=组百分比/组距
+如何计算柱形的高度：高度=组百分比/小组区间
 
-#### 3. The Density Scale 密度标度
+#### 3. The Density Scale 密度尺度
 
-通常在直方图的纵轴上使用密度标度（density scale），此时柱形的高度代表了聚集度（crowding），即每单位横坐标所占的百分比（percentage per horizontal unit）。所以直方图的总面积应该是100%。
+通常在直方图的纵轴上使用密度尺度（density scale），此时柱形的高度代表了聚集度（crowding），即每单位横坐标所占的百分比（percentage per horizontal unit）。所以直方图的总面积应该是100%。
 
 >Definitions: If the frequency of the ith bar is $f_i$, then its relative frequency is $r_i=f_i/n$, where n is the sample size. Its density is $d_i=r_i/w_i$, where $w_i$ is its width. Ordinarily, you should make a density histogram only if each bar has the same width.
 
@@ -63,7 +63,7 @@ below are section that have been studied but not yet organized.
 * 变量的类型：`定性的`（qualitative）或`定量的`（quantitative）。其中定量型变量又分为`离散型`（discrete）和`连续型`（continuous）。
 * 离散型变量：变量值具有固定间隔，可以一一列举（For a discrete variable, the values can only differ by `fixed amounts`.），比如家庭成员数。
 * 连续型变量：变量值不存在一个最小间隔（the difference can be arbitrarily small），比如年龄。
-* 直方图分布表（distribution table）组距（class interval）的选择，一般先选取`10至15`组距，并根据效果进行调整。另外应注意`端点约定`问题（endpoint convention）。端点约定是指刚好落在边界上的数值如何处理。对于离散型变量，可以使区间关于变量值居中（center the class intervals at the possible values）。
+* 直方图分布表（distribution table）小组区间（class interval）的选择，一般先选取`10至15`小组区间，并根据效果进行调整。另外应注意`终点约定`问题（endpoint convention）。终点约定是指刚好落在边界上的数值如何处理。对于离散型变量，可以使区间关于变量值居中（center the class intervals at the possible values）。
 
 #### 5. Controlling for a Variable
 
@@ -87,9 +87,9 @@ Tryon在小鼠上进行了选择育种实验，选择方法是：通过把小鼠
 
 #### 9. Summary...P56
 
-1. 直方图通过面积来表示百分比，其由一系列柱形组成。每一个柱形的面积表示其所对应的的组距（class interval）所占总体的比例。
-2. 在密度标度（density scale）下，柱形的高度等于每单位组距所占总体的百分比。
-3. 在密度标度下，面积被称作百分比，总的面积等于100%。两个组距的总面积等于其对应的总体比例。
+1. 直方图通过面积来表示百分比，其由一系列柱形组成。每一个柱形的面积表示其所对应的的小组区间（class interval）所占总体的比例。
+2. 在密度尺度（density scale）下，柱形的高度等于每单位小组区间所占总体的百分比。
+3. 在密度尺度下，面积被称作百分比，总的面积等于100%。两个小组区间的总面积等于其对应的总体比例。
 4. 变量是研究对象的特征（A variable is a characteristic of the subjects in a study），变量分为定性型和定量型，定量型变量又分为离散型和连续型。
 5. 混合因素（confounding factor）可以通过交叉表（cross-tab）来进行控制。
 
@@ -104,7 +104,7 @@ Tryon在小鼠上进行了选择育种实验，选择方法是：通过把小鼠
 #### 2. The Average
 
 * 平均数等于一组数字的总和，除以数字的个数。平均数是一种很强大的汇总数据的方法，代价是消除（smoothing away）了个体差异。
-* 横向研究（cross-sectional study）：在同一个时间点上比较不同（组）的个体。
+* 横断面研究（cross-sectional study）：在同一个时间点上比较不同（组）的个体。
 * 纵向研究（longitudinal study）：在不同的时间点上比较同一（组）个体。
 * 如果一项研究的得出了与年龄影响有关（effects of age）的结论，需要知道数据来源是横向的还是纵向的。
 
@@ -140,7 +140,7 @@ $$ Q_n \geq A_n $$
 
 * 想象一组数据在平均值附近散布开来，其散布的程度则可以用标准差（standard deviation, SD）衡量。
 * 标准差用来衡量一组数据偏离`平均值`的程度，类似于`平均偏差`（average deviation）。
-* 粗略估算，约68%的观测值（entries）分布在距离平均数一个标准差（即avg ± 1SD）的范围内。约95%的观测值分布在距离平均数两个标准差（即avg ± 2SD）的范围内，剩余的5%在两个标准差之外。这一规律对很多观测都适用，但并不是绝对的。（引申：6Sigma的原理？）
+* 粗略估算，约68%的观测值（entries）分布在距离平均数一个标准差（即avg ± 1SD）的范围内。约95%的观测值分布在距离平均数两个标准差（即avg ± 2SD）的范围内，剩余的5%在两个标准差之外。这一规律对很多观测都适用，但并不是绝对的（前提是样本或总体服从正态分布或近似正态分布）。
 
 #### 6. Computing the Standard Deviation
 
@@ -182,7 +182,7 @@ Pass
 * 平方均值（r.m.s.）衡量一组数据的绝对大小，不计正负。其值等于所有观测值先平方和，再求平均，再开根号。
 * 标准差（SD）衡量一组数据相对平均值的距离，或观测值偏离实际中心（指平均数）的平均距离。更准确地说，`标准差是观测值相对平均值偏差的平方均值`。
 * 大约68%的观测值都位于距离平均值±1SD的区间内，95%的观测值都位于距离平均值±2SD的区间内。这个规律并非绝对。
-* 如果某项研究得出了关于年龄具有某些效果的结论，那么需要明确研究数据是横向研究（同一时间点不同对象）还是纵向研究（不同时间点同一对象）。
+* 如果某项研究得出了关于年龄具有某些效果的结论，那么需要明确研究数据是横断面研究（同一时间点不同对象）还是纵向研究（不同时间点同一对象）。
 
 ### Chapter 5. The Normal Approximation for Data 正态近似...P96
 
@@ -204,7 +204,7 @@ $$ y=\frac{100\%}{\sqrt{2\pi}}e^{-x^2/2}, \textnormal{where}\ e= 2.71828.... $$
 * ±2 SD（±2 Sigma）区间面积：95.45%
 * ±3 SD（±3 Sigma）区间面积：99.73%，对应约2700PPM
 
-在进行标准单位变换时，密度标度（density scale）也需要进行变换，例如由：Percent Per Inch转化为Percent Per Standard Unit。转换公式为
+在进行标准单位变换时，密度尺度（density scale）也需要进行变换，例如由：Percent Per Inch转化为Percent Per Standard Unit。转换公式为
 $$ 1PPSU=\frac{100\%}{1SU}=\frac{100\%}{1SD\ inch}=\frac{1}{SD}\cdot\frac{100\%}{1\ inch}=\frac{1}{SD}\cdot1PP\ inch$$
 
 参考上方的正态分布图，由于SD=3 inch，因此转为为标准单位后，10 PPinch=3 x 10 PPSU=30 PPSU，相当于PPSU的尺度被“压缩”了。
@@ -257,7 +257,7 @@ $$ interquartile\ range=\textnormal{75th\ percentile-25th\ percentile} $$
 1. 标准正态曲线关于0对称，曲线覆盖的总面积是100%。
 2. `标准单位`（standard units）描述观测值距离平均数多少个标准差（SD）。
 3. 多数直方图的形状都与正态曲线近似。
-4. 如果一组观测值服从正态曲线分布，那么观测值落在某个区间（interval）的百分比，等于转化成正态曲线后，组距对应的面积，面积可以通过查正态分布表进行估算。这个过程叫做正态近似（normal approximation）。
+4. 如果一组观测值服从正态曲线分布，那么观测值落在某个区间（interval）的百分比，等于转化成正态曲线后，小组区间对应的面积，面积可以通过查正态分布表进行估算。这个过程叫做正态近似（normal approximation）。
 5. 如果一组观测值的直方图很好的服从正态分布，那么可以通过`平均数`和`标准差`来概括这组数据。
 6. 无论一组观测值的直方图是否服从正态分布，都可以通过使用`百分位数`（percentiles）来进行概括。
 7. `尺度变换`（change of scale）：对（一组数据的）每一个观测值加（减）固定值，平均数也会加减相应值，但SD不变。对每一个观测值乘（除）固定值，平均数和SD都会乘除相应值，如果乘除的固定值为负，则要去除括号。
